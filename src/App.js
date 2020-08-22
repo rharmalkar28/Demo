@@ -10,6 +10,10 @@ export default function App() {
   return (
     <div className="App">
       <StateProvider>
+        <div>
+test
+        </div>
+        <div>
         <Router>
           <Switch>
             <Route path="/page1">
@@ -22,7 +26,10 @@ export default function App() {
               <Home />
             </Route>
           </Switch>
-        </Router></StateProvider>
+        </Router>
+        </div>
+
+        </StateProvider>
     </div>
   );
 }
