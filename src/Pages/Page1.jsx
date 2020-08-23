@@ -83,7 +83,7 @@ const Page1 = observer(() => {
           />
         </div>
         <div>
-          <input type="submit" value="Update" />
+          <input type="submit" value="Update" className="submitBtn" />
         </div>
       </form>) : ''}
 

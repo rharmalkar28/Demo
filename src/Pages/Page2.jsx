@@ -49,7 +49,7 @@ export default function Page2() {
           />
         </div>
         <div>
-          <input type="submit" value="Save" />
+          <input type="submit" value="Save" className="submitBtn" />
         </div>
       </form>
     </div>
