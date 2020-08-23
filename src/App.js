@@ -12,17 +12,18 @@ export default function App() {
       <StateProvider>
         <Router>
           <Switch>
-            <Route path="/page1">
+            <Route exact path="/page1">
               <Page1 />
             </Route>
-            <Route path="/page2">
+            <Route exact path="/page2">
               <Page2 />
             </Route>
             <Route path="/">
               <Home />
             </Route>
           </Switch>
-        </Router></StateProvider>
+        </Router>
+      </StateProvider>
     </div>
   );
 }
