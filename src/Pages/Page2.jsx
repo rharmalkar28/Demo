@@ -26,39 +26,31 @@ export default function Page2() {
   return (
     <div className="App">
       <form onSubmit={submitForm}>
-      <div>
-        <TextField
-          className="mr-tp-one"
-          variant="outlined"
-          label="Comments"
-          multiline
-          rows={3}
-          value={feedbackObj.comments}
-          onChange={(e) => setFeedbackObj({ ...feedbackObj, comments: e.target.value })}
-          required
-        />
-      </div>
-      <div>
-        <TextField
-          className="mr-tp-one"
-          variant="outlined"
-          label="Tags"
-          value={feedbackObj.tags}
-          onChange={(e) => setFeedbackObj({ ...feedbackObj, tags: e.target.value.split(" ") })}
-          required
-        />
-      </div>
-      <div>
-      <input type="submit" value="save" />
-        {/* <Button
-          variant="contained"
-          color="primary"
-          className="mr-tp-one"
-          // onClick={submitForm}
-        >
-          
-      </Button> */}
-      </div>
+        <div>
+          <TextField
+            className="mr-tp-one"
+            variant="outlined"
+            label="Comments"
+            multiline
+            rows={3}
+            value={feedbackObj.comments}
+            onChange={(e) => setFeedbackObj({ ...feedbackObj, comments: e.target.value })}
+            required
+          />
+        </div>
+        <div>
+          <TextField
+            className="mr-tp-one"
+            variant="outlined"
+            label="Tags"
+            value={feedbackObj.tags}
+            onChange={(e) => setFeedbackObj({ ...feedbackObj, tags: e.target.value.split(" ") })}
+            required
+          />
+        </div>
+        <div>
+          <input type="submit" value="Save" />
+        </div>
       </form>
     </div>
   );
