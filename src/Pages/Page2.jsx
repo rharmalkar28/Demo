@@ -16,42 +16,50 @@ export default function Page2() {
     tags: []
   })
 
-  const submitForm = async () => {
+  const submitForm = async (e) => {
+    e.preventDefault();
     const res = await axios.post('http://localhost:3000/addFeedback', feedbackObj);
     store.addFeedback(res.data);
-    history.push('/page1')
+    history.push('/page2')
   }
 
   return (
     <div className="App">
+      <form onSubmit={submitForm}>
       <div>
         <TextField
           className="mr-tp-one"
           variant="outlined"
-          label="Email"
+          label="Comments"
+          multiline
+          rows={3}
           value={feedbackObj.comments}
           onChange={(e) => setFeedbackObj({ ...feedbackObj, comments: e.target.value })}
+          required
         />
       </div>
       <div>
         <TextField
           className="mr-tp-one"
           variant="outlined"
-          label="Comment"
+          label="Tags"
           value={feedbackObj.tags}
           onChange={(e) => setFeedbackObj({ ...feedbackObj, tags: e.target.value.split(" ") })}
+          required
         />
       </div>
       <div>
-        <Button
+      <input type="submit" value="save" />
+        {/* <Button
           variant="contained"
           color="primary"
           className="mr-tp-one"
-          onClick={submitForm}
+          // onClick={submitForm}
         >
-          save
-      </Button>
+          
+      </Button> */}
       </div>
+      </form>
     </div>
   );
 }
