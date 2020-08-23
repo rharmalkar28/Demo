@@ -29,7 +29,7 @@ const Page1 = observer(() => {
   }
 
   return (
-    <div className="App">
+    <>
       <Table>
         <TableHead>
           <TableRow>
@@ -42,7 +42,7 @@ const Page1 = observer(() => {
         <TableBody>
           {store.feedbacks.map(feedback => (
             <TableRow key={`tableKey_${feedback.id}`} >
-              <TableCell>{feedback.id}</TableCell>
+              <TableCell>{feedback.id+1}</TableCell>
               <TableCell>{feedback.comments}</TableCell>
               <TableCell>{feedback.tags}</TableCell>
               <TableCell>
@@ -86,8 +86,7 @@ const Page1 = observer(() => {
           <input type="submit" value="Update" className="submitBtn" />
         </div>
       </form>) : ''}
-
-    </div>
+    </>
   );
 });
 

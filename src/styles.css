@@ -1,23 +1,15 @@
 .App {
   font-family: sans-serif;
-  text-align: center;
+  display: flex;
+
 }
 .leftDiv {
-  float: left;
-  position: relative;
-  width: 18vw;
-  line-height: 1em;
+  flex:1
 }
 .rightBg {
-  background-image: url("./assets/hazy_background_tile.png");
-  background-repeat: repeat;
-  width: 80vw;
-    height: 100vh;
+  flex:4
 }
-.floatLeft {
-  float: left;
-  position: relative;
-}
+
 .mr-tp-one {
   margin-top: 1rem !important
 }
@@ -60,9 +52,7 @@ ul li a {
   text-decoration: none;
 }
 
-ul li a:hover {
-  color: #16796b;
-}
+
 
 ul li {
   list-style: none;
@@ -70,10 +60,7 @@ ul li {
   padding: 1rem;
 }
 
-ul li:hover {
-  background-image: url("./assets/hazy_background_tile.png");
-  background-repeat: repeat;
-}
+
 
 ul {
   width: 100%;
