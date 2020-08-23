@@ -7,6 +7,10 @@ const store = {
     },
     addFeedback(data) {
         this.feedbacks.push(data);
+    },
+    updateFeedback(data) {
+        const idx = this.feedbacks.filter(item => item.id === data.id);
+        this.feedbacks[data.id] = data;
     }
 }
 
