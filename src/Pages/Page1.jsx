@@ -13,21 +13,12 @@ const Page1 = () => {
   useEffect(() => {
     (async () => {
       const res = await axios.get('http://localhost:3000/fetchFeedback');
-      console.log(res, '!!!');
       store.saveFeedback(res.data);
     })();
   }, []);
 
-  
-
   return useObserver(() => (
     <div className="App">
-      <h1>Hello CodeSandbox Page 1</h1>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-      </ul>
       {store.feedbacks.map(feedback => (
         <div>
           <p>{feedback.comments}</p>
