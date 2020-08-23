@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import { useObserver } from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 import { TextField, Table, TableHead, TableCell, TableRow, TableBody, Button } from "@material-ui/core";
 import FormPage1 from "../Components/FormPage1";
 import useGlobalState from '../Context';
 
 
-const Page1 = () => {
+const Page1 = observer(() => {
 
   const store = useGlobalState();
 
@@ -22,12 +22,13 @@ const Page1 = () => {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    const data = await axios.put(`http://localhost:3000/updateFeedback/${currentFeedback.id}`, currentFeedback);
-    console.log(data.data, 'result');
+    const res = await axios.put(`http://localhost:3000/updateFeedback/${currentFeedback.id}`, currentFeedback);
+    console.log(res, 'AAAAAA');
+    store.updateFeedback(res.data);
     setCurrentFeedback({});
   }
 
-  return useObserver(() => (
+  return (
     <div className="App">
       <Table>
         <TableHead>
@@ -87,7 +88,7 @@ const Page1 = () => {
       </form>) : ''}
 
     </div>
-  ));
-};
+  );
+});
 
 export default Page1;
