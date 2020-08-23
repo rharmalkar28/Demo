@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { TextField, Button } from "@material-ui/core";
 import axios from 'axios';
 import useGlobalState from '../Context';
 import { useHistory } from 'react-router-dom';
 
 
 export default function Page2() {
-
   const store = useGlobalState();
 
   const history = useHistory();
@@ -16,16 +17,41 @@ export default function Page2() {
   })
 
   const submitForm = async () => {
-      const res = await axios.post('http://localhost:3000/addFeedback', feedbackObj);
-      store.addFeedback(res.data);
-      history.push('/page1')
+    const res = await axios.post('http://localhost:3000/addFeedback', feedbackObj);
+    store.addFeedback(res.data);
+    history.push('/page1')
   }
 
   return (
     <div className="App">
-      <input type="text" value={feedbackObj.comments} onChange={(e) => setFeedbackObj({ ...feedbackObj, comments : e.target.value}) } />
-      <input type="text" value={feedbackObj.tags} onChange={(e) => setFeedbackObj({ ...feedbackObj, tags : e.target.value.split(" ")}) } />
-      <button onClick={submitForm}>Add</button>
+      <div>
+        <TextField
+          className="mr-tp-one"
+          variant="outlined"
+          label="Email"
+          value={feedbackObj.comments}
+          onChange={(e) => setFeedbackObj({ ...feedbackObj, comments: e.target.value })}
+        />
+      </div>
+      <div>
+        <TextField
+          className="mr-tp-one"
+          variant="outlined"
+          label="Comment"
+          value={feedbackObj.tags}
+          onChange={(e) => setFeedbackObj({ ...feedbackObj, tags: e.target.value.split(" ") })}
+        />
+      </div>
+      <div>
+        <Button
+          variant="contained"
+          color="primary"
+          className="mr-tp-one"
+          onClick={submitForm}
+        >
+          save
+      </Button>
+      </div>
     </div>
   );
 }

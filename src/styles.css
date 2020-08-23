@@ -2,3 +2,21 @@
   font-family: sans-serif;
   text-align: center;
 }
+.leftDiv {
+  float: left;
+  position: relative;
+  width: 18vw;
+}
+.rightBg {
+  background-image: url("./assets/hazy_background_tile.png");
+  background-repeat: repeat;
+  width: 80vw;
+    height: 100vh;
+}
+.floatLeft {
+  float: left;
+  position: relative;
+}
+.mr-tp-one {
+  margin-top: 1rem !important
+}
