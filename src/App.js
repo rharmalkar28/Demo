@@ -26,10 +26,10 @@ export default function App() {
         </div>
         <div className="rightBg floatLeft" >
           <Switch>
-            <Route path="/page1">
+            <Route exact path="/page1">
               <Page1 />
             </Route>
-            <Route path="/page2">
+            <Route exact path="/page2">
               <Page2 />
             </Route>
             <Route path="/">
@@ -38,7 +38,6 @@ export default function App() {
           </Switch>
         </div>
         </Router>
-
         </StateProvider>
     </div>
   );
