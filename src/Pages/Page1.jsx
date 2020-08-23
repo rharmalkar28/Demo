@@ -23,11 +23,6 @@ const Page1 = () => {
   return useObserver(() => (
     <div className="App">
       <h1>Hello CodeSandbox Page 1</h1>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-      </ul>
       {store.feedbacks.map(feedback => (
         <div>
           <p>{feedback.comments}</p>

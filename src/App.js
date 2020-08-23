@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./styles.css";
 import Page1 from "./Pages/Page1";
 import Page2 from "./Pages/Page2";
@@ -10,11 +10,21 @@ export default function App() {
   return (
     <div className="App">
       <StateProvider>
-        <div>
-test
-        </div>
-        <div>
         <Router>
+        <div className="leftDiv">
+        <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/page1">Page1</Link>
+        </li>
+        <li>
+          <Link to="/page2">Page2</Link>
+        </li>
+      </ul>
+        </div>
+        <div className="rightBg floatLeft" >
           <Switch>
             <Route path="/page1">
               <Page1 />
@@ -26,8 +36,8 @@ test
               <Home />
             </Route>
           </Switch>
-        </Router>
         </div>
+        </Router>
 
         </StateProvider>
     </div>
