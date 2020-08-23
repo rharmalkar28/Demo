@@ -31,7 +31,6 @@ export default function Page2() {
           label="Email"
           value={feedbackObj.comments}
           onChange={(e) => setFeedbackObj({ ...feedbackObj, comments: e.target.value })}
-        // fullWidth
         />
       </div>
       <div>
@@ -41,7 +40,6 @@ export default function Page2() {
           label="Comment"
           value={feedbackObj.tags}
           onChange={(e) => setFeedbackObj({ ...feedbackObj, tags: e.target.value.split(" ") })}
-        // fullWidth
         />
       </div>
       <div>
