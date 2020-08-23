@@ -27,10 +27,10 @@ export default function App() {
         <div className="rightBg floatLeft" >
           <Switch>
             <Route exact path="/page1">
-              <Page1 />
+              <Page2 />
             </Route>
             <Route exact path="/page2">
-              <Page2 />
+              <Page1 />
             </Route>
             <Route path="/">
               <Home />
