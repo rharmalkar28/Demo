@@ -12,10 +12,11 @@ const feedback = {
 }
 
 
-router.put('/updatefeedback:id', (req, res) => {
+router.put('/updateFeedback/:id', (req, res) => {
+    console.log('for update', req.body);
     if (feedbacks[req.params.id]) {
-        feedbacks[req.params.id].rating = req.body;
-        res.send();
+        feedbacks[req.params.id] = req.body;
+        res.send(feedbacks[req.params.id]);
     }
 });
 
