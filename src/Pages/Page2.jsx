@@ -24,7 +24,7 @@ export default function Page2() {
   }
 
   return (
-    <div className="App">
+    <>
       <form onSubmit={submitForm}>
         <div>
           <TextField
@@ -49,9 +49,9 @@ export default function Page2() {
           />
         </div>
         <div>
-          <input type="submit" value="Save" />
+          <input type="submit" value="Save" className="submitBtn" />
         </div>
       </form>
-    </div>
+    </>
   );
 }
